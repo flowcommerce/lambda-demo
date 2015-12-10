@@ -1,0 +1,9 @@
+target/
+logs/
+lib_managed/
+.ivy2
+*.swp
+*.swo
+.DS_STORE
+.history
+
