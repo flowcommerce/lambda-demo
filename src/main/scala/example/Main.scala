@@ -11,8 +11,6 @@ package example
 */
 
 // Case class doesn't seem to work
-//case class RequestClass(key1: String, key2: String, key3: String)
-
 // POJO-like for now - lambda looks for explicit getters and setters
 class RequestClass {
   var key1: String = ""
@@ -28,11 +26,16 @@ class RequestClass {
   def setKey3(s: String) { key3 = s }
 }
 
+class ResponseClass(val key1: String, val key2: String, val key3: String) {
+  def getKey1(): String = key1
+  def getKey2(): String = key2
+  def getKey3(): String = key3
+}
+
 // Actual thing called
 class Main {
-  def sayHelloAgain(req: RequestClass): String = {
-    val x = "key1: " + req.key1 + ", key2: " + req.key2 + ", key3: " + req.key3
-    return x
+  def sayHelloAgain(req: RequestClass): ResponseClass = {
+    return new ResponseClass(req.key1, req.key2, req.key3)
   }
 
   def sayHello(): String = {
