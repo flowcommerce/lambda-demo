@@ -7,3 +7,4 @@ lib_managed/
 .DS_STORE
 .history
 
+.bsp/
